@@ -27,6 +27,10 @@ let andarX = 0
 let andarY = 0
 
 let botao
+let cima
+let baixo
+let esquerda
+let direita
 
 //executa apenas uma vez ao iniciar o programa
 function setup() {
@@ -44,6 +48,19 @@ function setup() {
   person = loadImage('person.png')
 
   personagem = person1;
+
+  //criando botões
+  cima = createButton('Cima')
+  cima.mousePressed(andarCima)
+
+  esquerda = createButton('Esquerda')
+  esquerda.mousePressed(andarEsquerda)
+
+  baixo = createButton('Baixo')
+  baixo.mousePressed(andarBaixo)
+
+  direita = createButton('Direita')
+  direita.mousePressed(andarDireita)
 }
 
 //fica executando em loop até que o programa seja encerrado
@@ -134,6 +151,23 @@ function draw() {
     textSize(17)
     text('NÃO PODE ENFRENTAR O CHEFÃO', 130, 300)
   }
+}
+
+//fazendo os botões funcionarem
+function andarCima() {
+  andarY -= passo
+}
+
+function andarBaixo() {
+  andarY += passo
+}
+
+function andarEsquerda() {
+  andarX -= passo
+}
+
+function andarDireita() {
+  andarX += passo
 }
 
 function reset() {
