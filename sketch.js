@@ -1,16 +1,24 @@
 let personagem
-let p1
-let p2
+let person
+let person1
+let person2
+let person3
 let grama
-let coraçao
+let ocarina
 let espada
 let chave
 let porta
+let logo
+let block
 
-let posiçaoDoCoraçao = 512
-let posiçaoDaEspada = 512
-let posiçaoDaChave = 256
+let pxOcarina = 512
+let pxEspada = 512
+let pxChave = 256
+let pxArvore1 = 448
+let pxArvore2 = 512
 let itens = 0
+
+let tocarOcarina = false
 
 const tamanho = 64
 const passo = 64
@@ -23,81 +31,106 @@ let botao
 //executa apenas uma vez ao iniciar o programa
 function setup() {
   createCanvas(576, 576);
-  p1 = loadImage('p1.png');
-  p2 = loadImage('p2.png');
-  grama = loadImage('grama.jpg');
-  coraçao = loadImage('coraçao.png')
+  person1 = loadImage('p1.png')
+  person2 = loadImage('p2.png')
+  person3 = loadImage('p3.png')
+  grama = loadImage('grama.png')
+  ocarina = loadImage('ocarina.png')
   espada = loadImage('espada.png')
   chave = loadImage('chave.png')
   porta = loadImage('porta.png')
-  personagem = p1
+  logo = loadImage('logo.png')
+  block = loadImage('arvore.png')
+  person = loadImage('person.png')
+
+  personagem = person1;
 }
 
 //fica executando em loop até que o programa seja encerrado
 function draw() {
-  background(220);
-  
+  background(220)
+
   if (andarX < 0) {
     andarX = 0;
   }
-  
+
   if (andarY < 0) {
     andarY = 0;
   }
-  
-  if (andarX > tamanho*8) {
-    andarX = tamanho*8;
+
+  if (andarX > tamanho * 8) {
+    andarX = tamanho * 8;
   }
-  
-  if (andarY > tamanho*8) {
-    andarY = tamanho*8;
+
+  if (andarY > tamanho * 8) {
+    andarY = tamanho * 8;
   }
-  
-  for(let x = 0; x < 9; x++) {
-    for(let y = 0; y < 9; y++) {
-      image(grama, 64*x, 64*y, tamanho, tamanho);
+
+  if (andarX >= pxArvore1 && andarY === 0 && personagem === person1) {
+    andarX = 384
+  }
+
+  if (andarX >= pxArvore2 && andarY === 64 && personagem === person1) {
+    andarX = 448
+  }
+
+  for (let x = 0; x < 9; x++) {
+    for (let y = 0; y < 9; y++) {
+      image(grama, 64 * x, 64 * y, tamanho, tamanho);
     }
   }
-  
-  image(coraçao, posiçaoDoCoraçao, 0, tamanho, tamanho)
-  image(espada, 0, posiçaoDaEspada, tamanho, tamanho)
-  image(chave, posiçaoDaChave, posiçaoDaChave, tamanho, tamanho)
+
+  image(ocarina, pxOcarina, 0, tamanho, tamanho)
+  image(espada, 0, pxEspada, tamanho, tamanho)
+  image(chave, pxChave, pxChave, tamanho, tamanho)
   image(porta, 512, 512, tamanho, tamanho)
-  
-  
-  if(andarX === posiçaoDoCoraçao && andarY === 0) {
-    posiçaoDoCoraçao = 1000
-    itens ++
+  image(block, pxArvore1, 0, tamanho, tamanho)
+  image(block, pxArvore2, 64, tamanho, tamanho)
+
+  if (andarX === 0 && andarY === pxEspada) {
+    pxEspada = 1000
+    itens++
+    personagem = person2
   }
-  
-  if(andarX === 0 && andarY === posiçaoDaEspada) {
-    personagem = p2
-    posiçaoDaEspada = 1000
-    itens ++
-  } else {
-    image(personagem, andarX, andarY, tamanho, tamanho);
+
+  if (andarX === pxArvore1 && andarY === 0 && personagem === person2 || personagem === person3) {
+    pxArvore1 = 1000
   }
-  
-  if(andarX === posiçaoDaChave && andarY === posiçaoDaChave) {
-    posiçaoDaChave = 1000
-    itens ++
+  if (andarX === pxArvore2 && andarY === 64 && personagem === person2 || personagem === person3) {
+    pxArvore2 = 1000
   }
-  
-  if(andarX === tamanho*8 && andarY === tamanho*8 && itens === 3) {
-    //criar um retangulo
-    rect (160, 260, 260, 100)
-    //escrever um texto GANHOU
-    textSize(17)
-    text('PODE ENFRENTAR O CHEFÃO', 165, 300)
-    //criar um botão
+
+  if (andarX === pxChave && andarY === pxChave) {
+    pxChave = 1000
+    itens++
+  }
+
+  if (andarX === pxOcarina && andarY === 0) {
+    pxOcarina = 1000
+    itens++
+    personagem = person3
+    tocarOcarina = true
+
+    setTimeout(() => {
+      tocarOcarina = false
+    }, 1000);
+  }
+
+  if (tocarOcarina === true) {
+    image(person, 100, 0)
+  }
+
+  image(personagem, andarX, andarY, tamanho, tamanho)
+
+  if (andarX === tamanho * 8 && andarY === tamanho * 8 && itens === 3) {
+    image(logo, -100, tamanho * 8 / 4)
     botao = createButton('Reiniciar')
-    botao.position(250, 320)
-    //resetar o jogo
+    botao.position(330, 355)
     botao.mousePressed(reset)
-    //parar o jogo
     noLoop()
-  } else if (andarX === tamanho*8 && andarY === tamanho*8 && itens !== 3) {
-    rect (125, 260, 300, 70)
+  } else if (andarX === tamanho * 8 && andarY === tamanho * 8 && itens !== 3) {
+    noStroke()
+    rect(125, 260, 300, 70)
     textSize(17)
     text('NÃO PODE ENFRENTAR O CHEFÃO', 130, 300)
   }
@@ -108,28 +141,32 @@ function reset() {
   andarY = 0
   botao.remove()
   loop()
-  personagem = p1
-  posiçaoDaEspada = 512
-  posiçaoDoCoraçao = 512
-  posiçaoDaChave = 256
+  personagem = person1
+  pxEspada = 512
+  pxOcarina = 512
+  pxChave = 256
+  pxArvore1 = 448
+  pxArvore2 = 512
   itens = 0
 }
 
 //executa sempre que uma tecla for pressionada
 function keyPressed() {
-  if (keyIsDown(UP_ARROW)) {
-    andarY -= passo
-  }
-  
-  if (keyIsDown(DOWN_ARROW)) {
-    andarY += passo
-  }
-  
-  if (keyIsDown(LEFT_ARROW)) {
-    andarX -= passo
-  }
-  
-  if (keyIsDown(RIGHT_ARROW)) {
-    andarX += passo
+  if (tocarOcarina === false) {
+    if (keyIsDown(UP_ARROW)) {
+      andarY -= passo
+    }
+
+    if (keyIsDown(DOWN_ARROW)) {
+      andarY += passo
+    }
+
+    if (keyIsDown(LEFT_ARROW)) {
+      andarX -= passo
+    }
+
+    if (keyIsDown(RIGHT_ARROW)) {
+      andarX += passo
+    }
   }
 }
