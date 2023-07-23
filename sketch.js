@@ -50,16 +50,16 @@ function setup() {
   personagem = person1;
 
   //criando botões
-  cima = createButton('Cima')
+  cima = createButton('⇧')
   cima.mousePressed(andarCima)
 
-  esquerda = createButton('Esquerda')
+  esquerda = createButton('⇦')
   esquerda.mousePressed(andarEsquerda)
 
-  baixo = createButton('Baixo')
+  baixo = createButton('⇩')
   baixo.mousePressed(andarBaixo)
 
-  direita = createButton('Direita')
+  direita = createButton('⇨')
   direita.mousePressed(andarDireita)
 }
 
@@ -142,8 +142,8 @@ function draw() {
   if (andarX === tamanho * 8 && andarY === tamanho * 8 && itens === 3) {
     image(logo, -100, tamanho * 8 / 4)
     botao = createButton('Reiniciar')
-    botao.position(330, 355)
     botao.mousePressed(reset)
+    botao.addClass('botao');
     noLoop()
   } else if (andarX === tamanho * 8 && andarY === tamanho * 8 && itens !== 3) {
     noStroke()

@@ -1,7 +1,30 @@
-html, body {
-  margin: 0;
+html,
+body {
+  margin: 1;
   padding: 0;
 }
+
 canvas {
   display: block;
+}
+
+button {
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  color: rgb(30, 29, 29);
+  background-color: #ffffff;
+  border-color: rgb(0, 0, 0);
+  font-weight: 100;
+  margin-left: 3px;
+  margin-top: 3px;
+  border-radius: 20%;
+}
+
+button.botao {
+  width: 180px;
+  height: 60px;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Tektur', cursive;
+  border-radius: 10px;
 }
