@@ -18,6 +18,10 @@ let pxArvore1 = 448
 let pxArvore2 = 512
 let itens = 0
 
+let som
+let songOfTime
+let title
+
 let tocarOcarina = false
 
 const tamanho = 64
@@ -31,6 +35,14 @@ let cima
 let baixo
 let esquerda
 let direita
+
+//carregar música
+function preload() {
+  soundFormats('mp3')
+  som = loadSound('hyrule-field.mp3')
+  songOfTime = loadSound('song-of-time.mp3')
+  title = loadSound('title-theme.mp3')
+}
 
 //executa apenas uma vez ao iniciar o programa
 function setup() {
@@ -46,6 +58,9 @@ function setup() {
   logo = loadImage('logo.png')
   block = loadImage('arvore.png')
   person = loadImage('person.png')
+
+  //tocar música
+  som.play()
 
   personagem = person1;
 
@@ -127,10 +142,7 @@ function draw() {
     itens++
     personagem = person3
     tocarOcarina = true
-
-    setTimeout(() => {
-      tocarOcarina = false
-    }, 1000);
+    somDoTempo()
   }
 
   if (tocarOcarina === true) {
@@ -145,6 +157,8 @@ function draw() {
     botao.mousePressed(reset)
     botao.addClass('botao');
     noLoop()
+    som.stop()
+    title.play()
   } else if (andarX === tamanho * 8 && andarY === tamanho * 8 && itens !== 3) {
     noStroke()
     rect(125, 260, 300, 70)
@@ -152,6 +166,20 @@ function draw() {
     text('NÃO PODE ENFRENTAR O CHEFÃO', 130, 300)
   }
 }
+
+
+//chamar a música do tempo
+function somDoTempo() {
+  som.pause()
+  songOfTime.play()
+
+  setTimeout(() => {
+    tocarOcarina = false
+    som.play()
+    songOfTime.stop()
+  }, 10000);
+}
+
 
 //fazendo os botões funcionarem
 function andarCima() {
@@ -175,6 +203,8 @@ function reset() {
   andarY = 0
   botao.remove()
   loop()
+  title.stop()
+  som.play()
   personagem = person1
   pxEspada = 512
   pxOcarina = 512
