@@ -46,7 +46,7 @@ function preload() {
 
 //executa apenas uma vez ao iniciar o programa
 function setup() {
-  createCanvas(576, 576);
+  createCanvas(576, 576)
   person1 = loadImage('p1.png')
   person2 = loadImage('p2.png')
   person3 = loadImage('p3.png')
@@ -59,10 +59,10 @@ function setup() {
   block = loadImage('arvore.png')
   person = loadImage('person.png')
 
-  //tocar música
-  som.play()
+  // Tocar música
+  som.play();
 
-  personagem = person1;
+  personagem = person1
 
   //criando botões
   cima = createButton('⇧')
@@ -76,6 +76,7 @@ function setup() {
 
   direita = createButton('⇨')
   direita.mousePressed(andarDireita)
+
 }
 
 //fica executando em loop até que o programa seja encerrado
@@ -91,11 +92,11 @@ function draw() {
   }
 
   if (andarX > tamanho * 8) {
-    andarX = tamanho * 8;
+    andarX = tamanho * 8
   }
 
   if (andarY > tamanho * 8) {
-    andarY = tamanho * 8;
+    andarY = tamanho * 8
   }
 
   if (andarX >= pxArvore1 && andarY === 0 && personagem === person1) {
@@ -108,7 +109,7 @@ function draw() {
 
   for (let x = 0; x < 9; x++) {
     for (let y = 0; y < 9; y++) {
-      image(grama, 64 * x, 64 * y, tamanho, tamanho);
+      image(grama, 64 * x, 64 * y, tamanho, tamanho)
     }
   }
 
@@ -155,7 +156,7 @@ function draw() {
     image(logo, -100, tamanho * 8 / 4)
     botao = createButton('Reiniciar')
     botao.mousePressed(reset)
-    botao.addClass('botao');
+    botao.addClass('botao')
     noLoop()
     som.stop()
     title.play()
@@ -167,7 +168,6 @@ function draw() {
   }
 }
 
-
 //chamar a música do tempo
 function somDoTempo() {
   som.pause()
@@ -177,25 +177,32 @@ function somDoTempo() {
     tocarOcarina = false
     som.play()
     songOfTime.stop()
-  }, 10000);
+  }, 10000)
 }
-
 
 //fazendo os botões funcionarem
 function andarCima() {
-  andarY -= passo
+  if (tocarOcarina === false) {
+    andarY -= passo
+  }
 }
 
 function andarBaixo() {
-  andarY += passo
+  if (tocarOcarina === false) {
+    andarY += passo
+  }
 }
 
 function andarEsquerda() {
-  andarX -= passo
+  if (tocarOcarina === false) {
+    andarX -= passo
+  }
 }
 
 function andarDireita() {
-  andarX += passo
+  if (tocarOcarina === false) {
+    andarX += passo
+  }
 }
 
 function reset() {
