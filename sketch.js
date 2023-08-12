@@ -1,15 +1,5 @@
-let personagem
-let person
-let person1
-let person2
-let person3
-let grama
-let ocarina
-let espada
-let chave
-let porta
-let logo
-let block
+let personagem, person, person1, person2, person3
+let grama, ocarina, espada, chave, porta, block, logo
 
 let pxOcarina = 512
 let pxEspada = 512
@@ -18,9 +8,7 @@ let pxArvore1 = 448
 let pxArvore2 = 512
 let itens = 0
 
-let som
-let songOfTime
-let title
+let som, songOfTime, title
 
 let tocarOcarina = false
 
@@ -30,65 +18,54 @@ const passo = 64
 let andarX = 0
 let andarY = 0
 
-let botao
-let cima
-let baixo
-let esquerda
-let direita
+let botao, cima, baixo, esquerda, direita
 
-//carregar música
+// Carregar música
 function preload() {
   soundFormats('mp3')
-  som = loadSound('hyrule-field.mp3')
-  songOfTime = loadSound('song-of-time.mp3')
-  title = loadSound('title-theme.mp3')
+  som = loadSound('song/hyrule-field.mp3')
+  songOfTime = loadSound('song/song-of-time.mp3')
+  title = loadSound('song/title-theme.mp3')
 }
 
-//executa apenas uma vez ao iniciar o programa
+// Executa apenas uma vez ao iniciar o programa
 function setup() {
-  createCanvas(576, 576)
-  person1 = loadImage('p1.png')
-  person2 = loadImage('p2.png')
-  person3 = loadImage('p3.png')
-  grama = loadImage('grama.png')
-  ocarina = loadImage('ocarina.png')
-  espada = loadImage('espada.png')
-  chave = loadImage('chave.png')
-  porta = loadImage('porta.png')
-  logo = loadImage('logo.png')
-  block = loadImage('arvore.png')
-  person = loadImage('person.png')
+  const jogo = document.getElementById('jogo')
+  const canvas = createCanvas(576, 576)
+  canvas.parent(jogo)
+
+  person1 = loadImage('img/p1.png')
+  person2 = loadImage('img/p2.png')
+  person3 = loadImage('img/p3.png')
+  grama = loadImage('img/grama.png')
+  ocarina = loadImage('img/ocarina.png')
+  espada = loadImage('img/espada.png')
+  chave = loadImage('img/chave.png')
+  porta = loadImage('img/porta.png')
+  logo = loadImage('img/logo.png')
+  block = loadImage('img/arvore.png')
+  person = loadImage('img/person.png')
 
   // Tocar música
-  som.play();
+  som.play()
 
   personagem = person1
 
-  //criando botões
-  cima = createButton('⇧')
-  cima.mousePressed(andarCima)
-
-  esquerda = createButton('⇦')
-  esquerda.mousePressed(andarEsquerda)
-
-  baixo = createButton('⇩')
-  baixo.mousePressed(andarBaixo)
-
-  direita = createButton('⇨')
-  direita.mousePressed(andarDireita)
+  botao = document.querySelector(".botao")
+  botao.style.display = "none"
 
 }
 
-//fica executando em loop até que o programa seja encerrado
+// Fica executando em loop até que o programa seja encerrado
 function draw() {
   background(220)
 
   if (andarX < 0) {
-    andarX = 0;
+    andarX = 0
   }
 
   if (andarY < 0) {
-    andarY = 0;
+    andarY = 0
   }
 
   if (andarX > tamanho * 8) {
@@ -146,7 +123,7 @@ function draw() {
     somDoTempo()
   }
 
-  if (tocarOcarina === true) {
+  if (tocarOcarina) {
     image(person, 100, 0)
   }
 
@@ -154,9 +131,7 @@ function draw() {
 
   if (andarX === tamanho * 8 && andarY === tamanho * 8 && itens === 3) {
     image(logo, -100, tamanho * 8 / 4)
-    botao = createButton('Reiniciar')
-    botao.mousePressed(reset)
-    botao.addClass('botao')
+    botao.style.display = 'inline-block'
     noLoop()
     som.stop()
     title.play()
@@ -168,7 +143,7 @@ function draw() {
   }
 }
 
-//chamar a música do tempo
+// Chamar a música do tempo
 function somDoTempo() {
   som.pause()
   songOfTime.play()
@@ -180,36 +155,37 @@ function somDoTempo() {
   }, 10000)
 }
 
-//fazendo os botões funcionarem
+// Fazendo os botões funcionarem
 function andarCima() {
-  if (tocarOcarina === false) {
+  if (!tocarOcarina) {
     andarY -= passo
   }
 }
 
 function andarBaixo() {
-  if (tocarOcarina === false) {
+  if (!tocarOcarina) {
     andarY += passo
   }
 }
 
 function andarEsquerda() {
-  if (tocarOcarina === false) {
+  if (!tocarOcarina) {
     andarX -= passo
   }
 }
 
 function andarDireita() {
-  if (tocarOcarina === false) {
+  if (!tocarOcarina) {
     andarX += passo
   }
 }
 
+// Reseta o jogo para o inicio
 function reset() {
   andarX = 0
   andarY = 0
-  botao.remove()
   loop()
+  botao.style.display = "none"
   title.stop()
   som.play()
   personagem = person1
@@ -221,9 +197,9 @@ function reset() {
   itens = 0
 }
 
-//executa sempre que uma tecla for pressionada
+// Executa sempre que uma tecla for pressionada
 function keyPressed() {
-  if (tocarOcarina === false) {
+  if (!tocarOcarina) {
     if (keyIsDown(UP_ARROW)) {
       andarY -= passo
     }

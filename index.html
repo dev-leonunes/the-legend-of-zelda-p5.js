@@ -5,9 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Legend of Zelda</title>
-  <script src="p5.js"></script>
-  <script src="sketch.js"></script>
-  <script src="p5.sound.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +14,26 @@
 </head>
 
 <body>
-
+  <header>
+    <h1><img src="img/logo-loz.png" class="title"></h1>
+  </header>
+  <div class="container">
+    <div id="jogo" class="jogo-container">
+    </div>
+    <div id="controls">
+      <button id="cima" onclick="andarCima()">⇧</button>
+      <button id="esquerda" onclick="andarEsquerda()">⇦</button>
+      <button id="baixo" onclick="andarBaixo()">⇩</button>
+      <button id="direita" onclick="andarDireita()">⇨</button>
+      <button class="botao" onclick="reset()">Reiniciar</button>
+    </div>
+    <footer>
+      <p>&copy; dev leonunes</p>
+    </footer>
+  </div>
+  <script src="p5.js"></script>
+  <script src="p5.sound.min.js"></script>
+  <script src="sketch.js"></script>
 </body>
 
 </html>
