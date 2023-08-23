@@ -5,7 +5,7 @@ Este jogo foi desenvolvido durante a primeira aula técnica do curso de <strong>
 O p5.js é uma biblioteca JavaScript para codificação criativa, com foco em tornar a programação acessível e inclusiva para artistas designers, educadores, iniciantes e qualquer pessoa! O p5.js é gratuito e de código aberto, o que permite que mais pessoas tenham acesso às ferramentas e recursos para aprender e criar.
 
 ## Atualização
-#### 16/07/2023
+#### 16/07/23
 O jogo passou por uma atualização recente, onde fiz algumas modificações aprimorando a experiência. Eis as mudanças realizadas:<br>
 
 - Novo Cenário: O background do jogo foi modificado para proporcionar uma experiência mais imersiva.<br>
@@ -26,7 +26,7 @@ Nesta nova atualização, implementamos elementos de CSS e HTML para aprimorar a
 
 - Elementos de Estilo: Adicionamos uma borda dourada e um fundo com a imagem da Triforce para criar um visual mais atraente ao redor do jogo.<br>
 - Cabeçalho Personalizado: Introduzimos um cabeçalho com a imagem da logo do Zelda para adicionar um toque temático à experiência.<br>
-- Centralização do Jogo: O jogo agora está centralizado na tela, proporcionando uma disposição mais organizada e esteticamente agradável.<br><br>
+- Centralização do Jogo: O jogo agora está centralizado na tela, proporcionando uma disposição mais organizada e esteticamente agradável.<br>
 
 ## Observações
 Este jogo é uma versão desenvolvida como parte de um desafio para concorrer a uma bolsa de estudos no curso. Você pode conferir o código desse desafio no repositório: <a href="https://github.com/futuroDevLeo/javascript-cubos-academy/blob/main/Minicurso/Atividade%204%20enfrentar%20o%20chef%C3%A3o.js">Enfrentar o Chefão</a>
