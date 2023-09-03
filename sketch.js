@@ -23,9 +23,9 @@ let botao, cima, baixo, esquerda, direita
 // Carregar música
 function preload() {
   soundFormats('mp3')
-  som = loadSound('song/hyrule-field.mp3')
-  songOfTime = loadSound('song/song-of-time.mp3')
-  title = loadSound('song/title-theme.mp3')
+  som = loadSound('sounds/hyrule-field.mp3')
+  songOfTime = loadSound('sounds/song-of-time.mp3')
+  title = loadSound('sounds/title-theme.mp3')
 }
 
 // Executa apenas uma vez ao iniciar o programa
