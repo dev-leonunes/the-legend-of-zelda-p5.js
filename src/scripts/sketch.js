@@ -23,9 +23,9 @@ let botao, cima, baixo, esquerda, direita
 // Carregar música
 function preload() {
   soundFormats('mp3')
-  som = loadSound('sounds/hyrule-field.mp3')
-  songOfTime = loadSound('sounds/song-of-time.mp3')
-  title = loadSound('sounds/title-theme.mp3')
+  som = loadSound('src/sounds/hyrule-field.mp3')
+  songOfTime = loadSound('src/sounds/song-of-time.mp3')
+  title = loadSound('src/sounds/title-theme.mp3')
 }
 
 // Executa apenas uma vez ao iniciar o programa
@@ -34,17 +34,17 @@ function setup() {
   const canvas = createCanvas(576, 576)
   canvas.parent(jogo)
 
-  person1 = loadImage('img/p1.png')
-  person2 = loadImage('img/p2.png')
-  person3 = loadImage('img/p3.png')
-  grama = loadImage('img/grama.png')
-  ocarina = loadImage('img/ocarina.png')
-  espada = loadImage('img/espada.png')
-  chave = loadImage('img/chave.png')
-  porta = loadImage('img/porta.png')
-  logo = loadImage('img/logo.png')
-  block = loadImage('img/arvore.png')
-  person = loadImage('img/person.png')
+  person1 = loadImage('src/assets/p1.png')
+  person2 = loadImage('src/assets/p2.png')
+  person3 = loadImage('src/assets/p3.png')
+  grama = loadImage('src/assets/grama.png')
+  ocarina = loadImage('src/assets/ocarina.png')
+  espada = loadImage('src/assets/espada.png')
+  chave = loadImage('src/assets/chave.png')
+  porta = loadImage('src/assets/porta.png')
+  logo = loadImage('src/assets/logo.png')
+  block = loadImage('src/assets/arvore.png')
+  person = loadImage('src/assets/person.png')
 
   // Tocar música
   som.play()

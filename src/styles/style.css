@@ -1,7 +1,7 @@
 html,
 body {
   background: #1b2727;
-  background-image: url(img/triforce.png);
+  background-image: url(../assets/triforce.png);
   background-repeat: repeat;
   background-size: 30px;
   font: normal 15pt Arial;
