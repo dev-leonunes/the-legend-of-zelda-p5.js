@@ -15,11 +15,13 @@
 
 <body>
   <header>
-    <h1><img src="./src/assets/logo-loz.png" class="title"></h1>
+    <h1>
+      <img src="./src/assets/logo-loz.png" class="title">
+    </h1>
   </header>
-  <div class="container">
-    <div id="jogo" class="jogo-container">
-    </div>
+
+  <section class="container">
+    <div id="jogo" class="jogo-container"></div>
     <div id="controls">
       <button id="cima" onclick="andarCima()">⇧</button>
       <button id="esquerda" onclick="andarEsquerda()">⇦</button>
@@ -27,13 +29,17 @@
       <button id="direita" onclick="andarDireita()">⇨</button>
       <button class="botao" onclick="reset()">Reiniciar</button>
     </div>
-    <footer>
-      <p>&copy; dev leonunes</p>
-    </footer>
-  </div>
+  </section>
+
+  <footer>
+    <p>
+      &copy; Desenvolvido por Leonardo Nunes
+    </p>
+  </footer>
+
   <script src="./src/scripts/p5.js"></script>
   <script src="./src/scripts/p5.sound.min.js"></script>
-  <script src="./src/scripts/sketch.js"></script>
+  <script src="./src/scripts/app.js"></script>
 </body>
 
 </html>
