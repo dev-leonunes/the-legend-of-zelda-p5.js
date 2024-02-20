@@ -26,13 +26,6 @@ function preload() {
   som = loadSound('src/sounds/hyrule-field.mp3')
   songOfTime = loadSound('src/sounds/song-of-time.mp3')
   title = loadSound('src/sounds/title-theme.mp3')
-}
-
-// Executa apenas uma vez ao iniciar o programa
-function setup() {
-  const jogo = document.getElementById('jogo')
-  const canvas = createCanvas(576, 576)
-  canvas.parent(jogo)
 
   person1 = loadImage('src/assets/p1.png')
   person2 = loadImage('src/assets/p2.png')
@@ -45,6 +38,13 @@ function setup() {
   logo = loadImage('src/assets/logo.png')
   block = loadImage('src/assets/arvore.png')
   person = loadImage('src/assets/person.png')
+}
+
+// Executa apenas uma vez ao iniciar o programa
+function setup() {
+  const jogo = document.getElementById('jogo')
+  const canvas = createCanvas(576, 576)
+  canvas.parent(jogo)
 
   // Tocar música
   som.play()
