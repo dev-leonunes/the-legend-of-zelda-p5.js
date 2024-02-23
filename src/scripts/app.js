@@ -20,7 +20,6 @@ let andarY = 0
 
 let botao, cima, baixo, esquerda, direita
 
-// Carregar música
 function preload() {
   soundFormats('mp3')
   som = loadSound('src/sounds/hyrule-field.mp3')
@@ -40,13 +39,11 @@ function preload() {
   person = loadImage('src/assets/person.png')
 }
 
-// Executa apenas uma vez ao iniciar o programa
 function setup() {
   const jogo = document.getElementById('jogo')
   const canvas = createCanvas(576, 576)
   canvas.parent(jogo)
 
-  // Tocar música
   som.play()
 
   personagem = person1
@@ -56,7 +53,6 @@ function setup() {
 
 }
 
-// Fica executando em loop até que o programa seja encerrado
 function draw() {
   background(220)
 
@@ -106,6 +102,7 @@ function draw() {
   if (andarX === pxArvore1 && andarY === 0 && personagem === person2 || personagem === person3) {
     pxArvore1 = 1000
   }
+
   if (andarX === pxArvore2 && andarY === 64 && personagem === person2 || personagem === person3) {
     pxArvore2 = 1000
   }
@@ -143,7 +140,6 @@ function draw() {
   }
 }
 
-// Chamar a música do tempo
 function somDoTempo() {
   som.pause()
   songOfTime.play()
@@ -155,7 +151,6 @@ function somDoTempo() {
   }, 10000)
 }
 
-// Fazendo os botões funcionarem
 function andarCima() {
   if (!tocarOcarina) {
     andarY -= passo
@@ -180,7 +175,6 @@ function andarDireita() {
   }
 }
 
-// Reseta o jogo para o inicio
 function reset() {
   andarX = 0
   andarY = 0
@@ -197,7 +191,6 @@ function reset() {
   itens = 0
 }
 
-// Executa sempre que uma tecla for pressionada
 function keyPressed() {
   if (!tocarOcarina) {
     if (keyIsDown(UP_ARROW)) {
