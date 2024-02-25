@@ -1,10 +1,13 @@
 # The Legend of Zelda
 
-Este jogo foi desenvolvido durante a primeira aula técnica do curso de <strong>Desenvolvedor com foco em Backend</strong> da Cubos Academy em parceria com o iFood. Utilizei os recursos gráficos do <a target="_blank" href="https://p5js.org/">P5.js Editor</a>.
+<img src="./src/assets/homepage-print.png" alt="print da tela iniciar do encriptador de texto" width=700px>
+
+## Sobre
+Este jogo foi desenvolvido durante a primeira aula técnica do curso de <strong>Desenvolvedor com foco em Backend</strong> da *Cubos Academy* em parceria com o *iFood*. Utilizei os recursos gráficos do <a target="_blank" href="https://p5js.org/">P5.js Editor</a>.
 
 O p5.js é uma biblioteca JavaScript para codificação criativa, com foco em tornar a programação acessível e inclusiva para artistas designers, educadores, iniciantes e qualquer pessoa! O p5.js é gratuito e de código aberto, o que permite que mais pessoas tenham acesso às ferramentas e recursos para aprender e criar.
 
-## Atualização
+### Atualizações
 #### 16/07/23
 O jogo passou por uma atualização recente, onde fiz algumas modificações aprimorando a experiência. Eis as mudanças realizadas:<br>
 
@@ -28,10 +31,13 @@ Nesta nova atualização, implementamos elementos de CSS e HTML para aprimorar a
 - Cabeçalho Personalizado: Introduzimos um cabeçalho com a imagem da logo do Zelda para adicionar um toque temático à experiência.<br>
 - Centralização do Jogo: O jogo agora está centralizado na tela, proporcionando uma disposição mais organizada e esteticamente agradável.<br>
 
-## Observações
+#### 23/02/24
+Entre os dias 18 à 23 de fevereiro a arquitetura de pastas do projeto foi modificada para melhor organizar os arquivos, além de mudanças de nomes de arquivos e no arquivo de script do jogo.
+
+### Observações
 Este jogo é uma versão desenvolvida como parte de um desafio para concorrer a uma bolsa de estudos no curso. Você pode conferir o código desse desafio no repositório: <a href="https://github.com/futuroDevLeo/javascript-cubos-academy/blob/main/Minicurso/Atividade%204%20enfrentar%20o%20chef%C3%A3o.js">Enfrentar o Chefão</a>
 
-## Como jogar
+### Como jogar
 -> Mova o personagem com as teclas direcionais do teclado (arrow keys) ou use os botões na parte inferior da tela para caminhar pelo cenário.<br>
 -> Colete os itens para conseguir entrar na porta!<br><br>
 
