@@ -3,7 +3,7 @@
 <img src="./src/assets/homepage-print.png" alt="print da tela iniciar do encriptador de texto" width=700px>
 
 ## Sobre
-Este jogo foi desenvolvido durante a primeira aula técnica do curso de <strong>Desenvolvedor com foco em Backend</strong> da *Cubos Academy* em parceria com o *iFood*. Utilizei os recursos gráficos do <a target="_blank" href="https://p5js.org/">P5.js Editor</a>.
+Este jogo foi desenvolvido durante a primeira aula técnica do curso de <strong>Desenvolvedor com foco em Backend</strong> da *Cubos Academy* em parceria com o *iFood*. Foram utilizados os recursos gráficos do: <a target="_blank" href="https://p5js.org/"><img src="https://skillicons.dev/icons?i=p5js" alt="P5.js Editor"/></a>.
 
 O p5.js é uma biblioteca JavaScript para codificação criativa, com foco em tornar a programação acessível e inclusiva para artistas designers, educadores, iniciantes e qualquer pessoa! O p5.js é gratuito e de código aberto, o que permite que mais pessoas tenham acesso às ferramentas e recursos para aprender e criar.
 
