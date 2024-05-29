@@ -35,10 +35,10 @@ Nesta nova atualização, implementamos elementos de CSS e HTML para aprimorar a
 Entre os dias 18 à 23 de fevereiro a arquitetura de pastas do projeto foi modificada para melhor organizar os arquivos, além de mudanças de nomes de arquivos e no arquivo de script do jogo.
 
 ### Observações
-Este jogo é uma versão desenvolvida como parte de um desafio para concorrer a uma bolsa de estudos no curso. Você pode conferir o código desse desafio no repositório: <a href="https://github.com/futuroDevLeo/javascript-cubos-academy/blob/main/Minicurso/Atividade%204%20enfrentar%20o%20chef%C3%A3o.js">Enfrentar o Chefão</a>
+Este jogo é uma versão desenvolvida como parte de um desafio para concorrer a uma bolsa de estudos no curso. Você pode conferir o código desse desafio no repositório: <a href="https://github.com/dev-leonunes/curso-backend-cubos-academy/blob/main/Minicurso/ex04-chefao.js">Enfrentar o Chefão</a>
 
 ### Como jogar
 -> Mova o personagem com as teclas direcionais do teclado (arrow keys) ou use os botões na parte inferior da tela para caminhar pelo cenário.<br>
 -> Colete os itens para conseguir entrar na porta!<br><br>
 
-Você pode jogar a versão atualizada do jogo clicando neste link: <a target="_blank" href="https://futurodevleo.github.io/the-legend-of-zelda-p5.js/">The Legend of Zelda</a>
+Você pode jogar a versão atualizada do jogo clicando neste link: <a target="_blank" href="https://dev-leonunes.github.io/the-legend-of-zelda-p5.js/">The Legend of Zelda</a>
