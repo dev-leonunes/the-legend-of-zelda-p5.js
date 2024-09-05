@@ -1,6 +1,6 @@
 # The Legend of Zelda
 
-<img src="./src/assets/homepage-print.png" alt="print da tela iniciar do encriptador de texto" width=700px>
+<img src="./src/assets/homepage-print.png" alt="print da página do jogo" width=700px>
 
 ## Sobre
 Este jogo foi desenvolvido durante a primeira aula técnica do curso de <strong>Desenvolvedor com foco em Backend</strong> da *Cubos Academy* em parceria com o *iFood*. Foram utilizados os recursos gráficos do: <a target="_blank" href="https://p5js.org/"><img src="https://skillicons.dev/icons?i=p5js" alt="P5.js Editor"/></a>.
@@ -39,6 +39,6 @@ Este jogo é uma versão desenvolvida como parte de um desafio para concorrer a 
 
 ### Como jogar
 -> Mova o personagem com as teclas direcionais do teclado (arrow keys) ou use os botões na parte inferior da tela para caminhar pelo cenário.<br>
--> Colete os itens para conseguir entrar na porta!<br><br>
+-> Colete os itens para conseguir entrar no portão!<br><br>
 
 Você pode jogar a versão atualizada do jogo clicando neste link: <a target="_blank" href="https://dev-leonunes.github.io/the-legend-of-zelda-p5.js/">The Legend of Zelda</a>
